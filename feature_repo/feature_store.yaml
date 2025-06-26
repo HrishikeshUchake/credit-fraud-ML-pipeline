@@ -1,11 +1,12 @@
-project: fraud_detection
-registry: registry.db
+# feature_store.yaml
+project: fraud_pipeline
+
 provider: local
+
+registry:
+  type: sqlite
+  path: data/registry.db
 
 online_store:
   type: redis
-  connection_string: localhost:6379
-
-offline_store:
-  type: file
-  path: .
+  connection_string: redis://redis:6379
